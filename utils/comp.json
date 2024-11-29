@@ -1,0 +1,347 @@
+{
+    "symmetric": {
+        "noncompliant": [
+            {
+                "algorithm": "ARIA",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "Blowfish",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "Twofish",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "ChaCha20/XChaCha20",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "Camellia",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "CAST",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "DES",
+                "reason": [
+                    "DES was FIPS 140-2 compliant until 2005.",
+                    "DES is no longer FIPS 140-2 compliant and has never been FIPS 140-3 compliant."
+                ],
+                "compliance": "Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "TDEA",
+                "reason": [
+                    "No longer compliant for FIPS 140-3.",
+                    "Specification for TDEA was withdrawn in 2024.",
+                    "However, it is FIPS 140-2 compliant."
+                ],
+                "compliance":"Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "IDEA",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "MARS",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "RC4",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "RC5",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "RC6",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "SEED",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "Serpent",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use AES for FIPS approval."
+            },
+            {
+                "algorithm": "SM4",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use AES for FIPS approval."
+            }
+        ]
+    },
+
+    "signature": {
+        "noncompliant": [
+            {
+                "algorithm": "DSA",
+                "reason": [
+                    "DSA may be used for verifying existing signatures.",
+                    "As of February 2023, FIPS 186-5 no longer approves DSA for new signatures.",
+                    "Therefore, it is highly recommended that DSA is not used for new software.",
+                    "DSA is FIPS 140-2 compliant, but NIST no longer accepts submissions with DSA."
+                ],
+                "compliance": "RSA, ECDSA, and EdDSA, including ed25519, should be used."
+            }
+        ]
+    },
+
+    "hash": {
+        "noncompliant": [
+            {
+                "algorithm": "SHA1",
+                "reason": [
+                    "SHA1 is an approved security function for FIPS 140-2 according to FIPS 180-4.",
+                    "However, the NIST notes that it is vulnerable to collision attacks.",
+                    "Therefore, NIST recommends that SHA-1 be disallowed for security operations.",
+                    "For FIPS 140-3, SHA-1 may be used for integrity checks, but not for digital signature generation."
+                ],
+                "compliance": "Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "MD2",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "MD4",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use SHA-2 or SHA-3 for FIPS FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "MD5",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "MD6",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": "Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "Threefish",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "BLAKE2",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "BLAKE3",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "SipHash",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "RIPEMD",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "SM3",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            },
+            {
+                "algorithm": "WHIRLPOOL",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance":"Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance."
+            }
+        ]
+    },
+
+    "libraries": {
+        "noncompliant": [
+            {
+                "algorithm": "Mbed TLS",
+                "reason": [
+                    "According to Mbed TLS documentation, the library is not FIPS certified.",
+                    "However, it seems they are making steps towards FIPS 140-2 certification."
+                ],
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+            ]
+            },
+
+            {
+                "algorithm": "Cryptlib",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved.",
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]
+            },
+
+            {
+                "algorithm": "Orion",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": [
+                    "FIPS compliance in Rust can be achieved with the following implementation:",
+                    "AWS Libcrypto for Rust (aws-lc-rs) aims to provide FIPS support while being compatible with the ring cryptography library's API.",
+                    "It should be noted that according to the AWS Open Source Blog, aws-lc-rs is for Linux and MacOS at the moment.",
+                    "When operated in the approved mode, aws-lc-rs provides bindings to FIPS 140-3 validated AWS-LC Cryptographic Module (Cert. #4631)"
+                ]
+            },
+            {
+                "algorithm": "Crypto++",
+                "reason": "Previously compliant with FIPS 140-2, but no longer has active status (NIST SP 800-131A Rev. 1)",
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]
+            },
+            {
+                "algorithm": "Botan",
+                "reason": [
+                    "Has never been FIPS 140-2 or 140-3 approved, and is not seeking FIPS approval.",
+                    "\"Primary developer... does not have a positive view of the [FIPS validation] process.\"",
+                    "\"... the cost of validation includes enormous amounts of time and money, adding 'checks' that are useless or actively harmful...\""
+                ],
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]    
+            },
+            {
+                "algorithm": "Libsodium",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]
+            },
+            {
+                "algorithm": "Go Crypto",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": "BoringCrypto (Cert. #4735) is FIPS 140-2 and 140-3 compliant and should be used instead."
+            },
+            {
+                "algorithm": "py-cryptography",
+                "reason": "Uses OpenSSL for any cryptographic operations, can enable FIPS mode for FIPS 140-2 compliance",
+                "compliance": "Ensure FIPS provider is installed and enable FIPS mode."
+            },
+            {
+                "algorithm": "PyCryptodome",
+                "reason":[ 
+                    "Has never been FIPS 140-2 or 140-3 approved, and is not seeking FIPS approval.",
+                    "Primary developer has stated that NIST certification is not considered because \"FIPS 140-2 certification costs a lot of time\" and money."
+                ],
+                "compliance": "Use py-cryptography and enable FIPS mode. Install instructions can be found on the documentation."
+            },
+            {
+                "algorithm": "ring",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved; however, the lead developer is investigating a FIPS mode after receiving financial support.",
+                "compliance": "Use Rustls, which is certified for FIPS 140-3 via AWS-LC cryptographic module (Cert. #4631)"
+            },
+            {
+                "algorithm": "LibTomCrypt",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]
+            },
+            {
+                "algorithm": "Nettle",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]
+            },
+            {
+                "algorithm": "NaCl",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]
+            },
+            {
+                "algorithm": "MatrixSSL",
+                "reason": "Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]
+            },
+            {
+                "algorithm": "LibreSSL",
+                "reason": [
+                    "Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                    "Developers removed FIPS 140-2 compliant module due to \"weak or broken\" ciphers."
+                ]
+            },
+            {
+                "algorithm": "Relic",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": [
+                    "For immediate FIPS 140-2 compliance, use one of the following:",
+                    "OpenSSL",
+                    "GnuTLS",
+                    "Libgcrypt",
+                    "For FIPS 140-3 compliance, use Libgcrypt or WolfSSL/WolfCrypt"
+                ]
+            },
+            {
+                "algorithm": "Sodium Oxide",
+                "reason":"Has never been FIPS 140-2 or 140-3 approved, likely not seeking FIPS approval.",
+                "compliance": "Use Rustls, which is certified for FIPS 140-3 via AWS-LC cryptographic module (Cert. #4631)"
+            }                       
+        ]
+    }
+}

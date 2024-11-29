@@ -1,0 +1,8 @@
+recursive-include ShannonScanner/utils *.json
+
+recursive-include ShannonScanner/tests *.md
+recursive-include ShannonScanner/tests/logs *md
+
+include README.md 
+include LICENSE
+

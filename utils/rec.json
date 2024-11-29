@@ -1,0 +1,280 @@
+{
+    "symmetric": {
+        "nonrecommended": [
+            {
+                "algorithm": "Blowfish",
+                "reason": [
+                    "Varible key length from 32 to 448 bits is flexible, but also insecure.",
+                    "Additionally, Blowfish supports a 64-bit block size, making it potentially susceptiable to collision attacks."
+                ],
+		        "recommended": "Use the Advanced Encryption Standard or TwoFish",
+                "rec_reason": [
+                    "The Advanced Encryption Standard is the common standard for symmetric encryption.",
+                    "TwoFish has a larger block size, key lengths of 128, 192, or 256 bits, and is faster than Blowfish."
+                ],
+                "references": [
+                    "Bhargavan and Leurent. (2016). 'On the Practical (In-)Security of 64-bit Block Ciphers: Collision Attacks on HTTP over TLS and OpenVPN'",
+                    "--> eprint.iacr.org/2016/798.pdf",
+                    "Schneier. (1994). \"Description of a New Variable-Length Key, 64-Bit Block Cipher (Blowfish).\"",
+                    "--> www.schneier.com/academic/archives/1994/09/description_of_a_new.html",
+                    "--> www.schneier.com/academic/blowfish/",
+                    "Green. (2016). 'Attack of the week: 64-bit ciphers in TLS'",
+                    "--> blog.cryptographyengineering.com/2016/08/24/attack-of-week-64-bit-ciphers-in-tls/"
+                ]
+            },
+            {
+                "algorithm": "DES",
+                "reason": [
+                "DES uses 56-bit keys. For today's standards, this is way too small and leaves it vulnerable to exhaustive key-search.",
+				"In 2006, DES was broken in under a week with a cost of only $10,000. With today's hardware, it absolutely should not be used."
+                ],
+                "recommended": "Use AES",
+                "rec_reason": "AES replaced DES as the US standard for symmetric encryption.",
+                "references": [
+                    "FIPS 46-3: Data Encryption Standard (Withdrawn 05/19/2005)",
+                    "Paar, et al. (2024). \"Understanding Cryptography: From Established Symmetric and Asymmetric Ciphers to Post-Quantum Cryptography\", pp. 73-105.",
+                    "Kumar, et al. (2006). 'Breaking Ciphers with COPACOBANA - A Cost-Optimized Parallel Code Breaker'"
+                ]
+            },
+            {
+                "algorithm": "TDEA",
+                "reason": [
+                    "TDEA deprecation was announced in 2017, and it's use has been disallowed as of 2024.",
+                    "64-bit block size leaves 3DES vulnerable to collision attacks.",
+                    "Imposing a limit on how much data can be encrypted under a single key can mitigate collision attacks.",
+                    "8 MB of data can be encrypted under one set of keys; clearly this is inadequate for larger applications like TLS."
+                ],
+                "recommended": "Use AES",
+                "rec_reason": "AES is compliant with FIPS 140-2 and 140-3",
+                "references": [
+                    "NIST SP 800-67r2: Recommendation for the Triple Data Encryption Algorithm (TDEA) Block Cipher",
+                    "--> nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-67r2.pdf",
+                    "Bhargavan and Leurent. (2016). 'On the Practical (In-)Security of 64-bit Block Ciphers: Collision Attacks on HTTP over TLS and OpenVPN'",
+                    "--> eprint.iacr.org/2016/798.pdf",
+                    "Green. (2016). 'Attack of the week: 64-bit ciphers in TLS'",
+                    "--> blog.cryptographyengineering.com/2016/08/24/attack-of-week-64-bit-ciphers-in-tls/",
+                    "Paar, et al. (2024). \"Understanding Cryptography: From Established Symmetric and Asymmetric Ciphers to Post-Quantum Cryptography\", pp. 73-105."
+                ]
+            },
+            {
+                "algorithm": "RC4",
+                "reason": [
+                    "Demonstrated plaintext recovery attacks by AlFardan, et al.",
+                    "Secret key recovery in less time than brute force by Paul and Maitra.",
+                    "Possible staging for ciphertext-only attack by Mantin and Shamir.",
+                    "Weakness in key-scheduling algorithm may allow for key recovery by adversary."	
+                ],
+                "recommended": "Use AES or ChaCha20",
+                "rec_reason": [
+                    "AES is the common standard for symmetric encryption.",
+                    "ChaCha20 is a faster and more secure stream cipher, and provides authenticated encryption."
+                ],
+                "references": [
+                    "RFC 7465: Prohibiting RC4 Cipher Suites",
+                    " --> datatracker.ietf.org/doc/html/rfc7465",
+                    "AlFardan, et al. (2013). \"On the Security of RC4 in TLS and WPA.\"",
+                    " --> www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper_alfardan.pdf",
+                    "Paul and Maitra. (2007). \"RC4 State Information at Any Stage Reveals the Secret Key.\"",
+                    " --> eprint.iacr.org/2007/208.pdf",
+                    "Mantin and Shamir. (2002). \"A Practical Attack on Broadcast RC4,\" in _Fast Software Encryption: 8th International Workshop, FSE 2001.",
+                    " --> link.springer.com/book/10.1007/3-540-45473-X",
+                    "Fluhrer, et al. (2001). \"Weakness in the Key Scheduling Algorithm of RC4.\"",
+                    " --> www.cs.cornell.edu/people/egs/615/rc4_ksaproc.pdf"		
+                ]
+            },
+            {
+                "algorithm": "RC5",
+                "reason": "Varible block size includes 32, 64, or 128 bit blocks. 32-64 bit block sizes are potentially vulnerable to collision attacks.",
+                "recommended": "Use AES or ChaCha20",
+                "rec_reason": [
+                    "AES is the common standard for symmetric encryption.",
+                    "ChaCha20 is a faster and more secure stream cipher, and provides authenticated encryption."
+                ],
+                "references": [
+                    "Bhargavan and Leurent. (2016). \"On the Practical (In-)Security of 64-bit Block Ciphers: Collision Attacks on HTTP over TLS and OpenVPN\"",
+                    "--> eprint.iacr.org/2016/798.pdf",
+                    "Green. (2016). \"Attack of the week: 64-bit ciphers in TLS\"",
+                    "--> blog.cryptographyengineering.com/2016/08/24/attack-of-week-64-bit-ciphers-in-tls/"
+                ]
+            },
+            {
+                "algorithm": "IDEA",
+                "reason": [
+                    "\"Large weak key classes\" were found in 2002 by Biryukov, et al.",
+                    "64-bit block size leaves IDEA potentially vulnerable to collision attacks."
+                ],
+                "recommended": "Use AES or ChaCha20",
+                "rec_reason":"AES is compliant with FIPS 140-2 and 140-3, and is the common standard.",
+                "references": [
+                    "Biryukov, et al., \"New Weak-Key Classes of IDEA\", 2002.",
+                    "Kelsey, et al., \"Key-Schedule Cryptanalysis of IDEA, G-DES, GOST, SAFER, and Triple-DES\", 1996."
+                ]   
+            }
+        ]       
+    },
+
+    "signature": {
+        "nonrecommended": [
+            {
+                "algorithm": "DSA",
+                "reason": [
+                    "Damien Miller of OpenSSH notes that the estimated security level of DSA is equivalent to no more than 80-bits of symmetric security.",
+                    "As of FIPS 186-5, DSA is disallowed for signature generation."
+                ],
+                "recommended": "Use EdDSA (including ed25519 and ed448), ECDSA, or RSA",
+                "rec_reason": [
+                    "EdDSA can provide 128-bit or 224-bit security depending on which curve is used.",
+                    "ECDSA can provide 128-bit security if a 256-bit key is used.",
+                    "RSA can provide 128-bit security if a key greater than 3072-bits is used."
+                ],
+                "references": [
+                    "FIPS 186-5",
+                    "Brendel, et al., \"The Provable Security of Ed25519: Theory and Practice\", 2020.",
+                    "Levy,\"Performance and Security of ECDSA\", 2015.",
+                    "Al-Zubaidie, et al., \"Efficient and Secure ECDSA Algorithm and its Applications: A Survey\", 2019."
+                ]
+            }         
+        ]
+    },
+
+    "modes": {
+        "nonrecommended": [
+            {
+                "algorithm": "ECB",
+                "reason": "Highly deterministic. Patterns in plaintext may be easily visible in ciphertext.",
+                "recommended": "Use Galois/Counter Mode (GCM)",
+                "rec_reason": [
+                    "GCM is an authenticated encryption mode. According to McGrew and Vega, it has proven secure in the concrete security model.",
+                    "Unlike ECB, GCM is parallelizable, providing a performance boost to encryption operations."
+                ],    
+                "references": [
+                    "McGrew and Veiga, \"The Security and Performance of the Galois/counter Mode (GCM) of Operation\", 2004.",
+                    "Rosulek, \"The Joy of Cryptography\", p. 144."
+                ]
+            },
+            {
+                "algorithm": "CBC",
+                "reason": "Not parallelizable, and padding is required which may allow for padding oracle attacks.",
+                "recommended": "Use Galois/Counter Mode (GCM)",
+                "rec_reason": [
+                    "GCM is an authenticated encryption mode. According to McGrew and Vega, it has proven secure in the concrete security model.",
+                    "Unlike CBC, GCM is parallelizable, providing a performance boost to encryption operations."
+                ],
+                "references": [
+                    "--> cryptopals.com/sets/3/challenges/17",
+                    "Eli Sohl, \"Cryptopals: Exploiting CBC Padding Oracles\", 2021",
+                    "McGrew and Veiga, \"The Security and Performance of the Galois/counter Mode (GCM) of Operation\", 2004."
+                ]
+            },
+            {
+                "algorithm": "XTS",
+                "reason": [
+                    "XTS should only be used for encrypting data on storage devices.",
+                    "If this is the purpose of XTS in the source code target, you may ignore this recommendation."
+                ],
+                "recommended": "Use Galois/Counter Mode (GCM).",
+                "rec_reason": "XTS was not designed for purposes outside of storage encryption, i.e. data in transit.",
+                "references": [
+                    "NIST Special Publication 800-38E, \"Recommendation for Block Cipher Modes of Operation: The XTS-AES Mode for Confidentiality on Storage Devices\", 2010.",
+                    "Follow-up on NIST's Consideration of XTS-AES, 2009"
+                ]
+            }
+        ]
+    },
+
+    "hash": {
+        "nonrecommended": [
+            {
+                "algorithm": "SHA1",
+                "reason": [
+                    "Vulnerable to collision attacks, SHA1 should no longer be used in the creation of digital signatures or other security applications.",
+                    "However, it may still be used in non-security applications like version control systems, i.e. git."
+                ],
+                "recommended": "Use SHA2 or SHA3",
+                "rec_reason": "SHA2 and SHA3 algorithms are (at present) collision resistant, and thus considered more secure.",
+                "references": [
+                    "NIST, \"NIST Transitioning Away from SHA-1 for All Applications\", 2022.",
+                    "NIST, \"NIST Retires SHA-1 Cryptographic Algorithm\", 2022",
+                    "Stevens, et al., \"The first collision for full SHA-1\", 2017.",
+                    "Cimpanu, \"SHA-1 collision attacks are now actuallu practical and a looming danger\", written for ZDNet, 2019."
+                ]
+            },
+            {
+                "algorithm": "MD2",
+                "reason": [
+                    "MD2 was found not to be a one-way function in 2010 by Knudsen, et al.",
+                    "MD2 is slower than MD4 and MD5, its successors, as well as all of the secure hash algorithms (SHA)."
+                ],
+                "recommended": "Use MD5, MD6, SHA2, or SHA3",
+                "rec_reason": "Better speed and better security, and not currently deprecated.",
+                "references":[
+                    "RFC #6149, 2011",
+                    "Knudsen, et al., \" Cryptanalysis of MD2\", 2010.",
+                    "Knudsen and Mathiassen, \"Preimage and collision Attacks on MD2\", 2005."
+                ]
+            },
+            {
+                "algorithm": "MD4",
+                "reason": [
+                    "Not secure in the slightest. Multiple published attacks exist.",
+                    "Wang, et al., presented a cohesive cryptanalysis of MD4 and found several vulnerabilities."
+                ],
+                "recommended": "Use MD5, MD6, SHA2, or SHA3",
+                "rec_reason": "Better speed and better security, and not currently deprecated or historical.",
+                "references": [
+                    "Wang, et al., \"Cryptanalysis of the Hash Functions MD4 and RIPEMD\", 2005.",
+                    "RFC #6150, 2011."
+                ]
+            },
+            {
+                "algorithm": "SipHash",
+                "reason": [
+                    "It is crucial to understand the purpose of SipHash in the target source code.",
+                    "SipHash should NOT be used as a cryptographic hash function, for applications like digital signature operations.",
+                    "SipHash should be used for applications like network traffic authentication and hash table look ups.",
+                    "If SipHash is used appropriately, this recommendation may be ignored."
+                ],
+                "recommended": "SHA2 or SHA3",
+                "rec_reason": "SHA2 or SHA3 are better poised to handle situations where a cryptographic hash function is needed.",
+                "references": "Aumasson and Bernstein, \"SipHash: a fast short-input PRF,\" 2012."
+            },
+            {
+                "algorithm": "RIPEMD",
+                "reason": [
+                    "There are several variants of RIPEMD, with digest sizes of 128, 160, 256, and 320 bits.",
+                    "RIPEMD-160 is the most commonly used and remains secure, with the best attack reaching 36 out of 80 rounds."
+                ],
+                "recommended": "SHA2 or SHA3",
+                "rec_reason": [
+                    "SHA2 and SHA3 are some of the most widely studied and attacked cryptographic hash functions today, and they've endured very well.",
+                    "RIPEMD-160 is likely adequate, but if security is a great concern, SHA2 or SHA3 should be used."
+                ],
+                "references": [
+                    "Liu, et al., \"Analysis of RIPEMD-160: New Collision Attacks and Finding Characteristics with MILP,\", 2023.",
+                    "Wang, et al., \"Collisions for Hash Functions: MD4, MD5, HAVAL-128, and RIPEMD,\" 2004."
+                ]
+            },
+            {
+                "algorithm": "SM3",
+                "reason": [
+                    "This is a SOFT recommendation.",
+                    "SM3 is similar to SHA-2 in its security, meaning it is probably safe to use.",
+                    "However, the only reason one would have to use SM3 over SHA-2 or SHA-3 is their geographic location.",
+                    "If seeking compliance with Chinese standards, SM3 should be used; otherwise, SHA-2 is just as well and rigorously tested."
+                ],
+                "recommended": "SHA-2",
+                "rec_reason": "SHA-2 is more of an international standard and widely tested and attacked.",
+                "references": "Kircanski and Youseff, \"Boomerang and Slide-Rotational Analysis of the SM3 Hash Function,\" 2012."
+            },
+            {
+                "algorithm": "WHIRLPOOL",
+                "reason": [
+                    "Although it hasn't been officially broken, there is some impressive cryptanalysis against WHIRLPOOL.",
+                    "Based off AES, it is likely secure. However, it is not as widely used or analyzed compared to more standard hash functions."
+                ],
+                "recommended":"SHA2 or SHA3",
+                "rec_reason": "The SHA family remain the most thoroughly tested and secure hash functions today."
+            }
+        ]
+    }
+}
