@@ -12,8 +12,8 @@ setup(
     url="https://github.com/andykeefe/ShannonScanner",
     packages=find_packages(),
     package_data={
-        'ShannonScanner.utils': ['*.json']
-    }
+        'ShannonScanner.utils': ['*.json'],
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3.0",
@@ -22,9 +22,9 @@ setup(
     python_requires=">=3.6",
     install_requires=[
         "exrex",
-        "pyahocorasick"
+        "pyahocorasick",
     ],
-    entry_points= {
+    entry_points={
         "console_scripts": [
             "shannonscan=ShannonScanner.shannonscan:main",
         ],
