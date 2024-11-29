@@ -24,7 +24,7 @@ setup(
     ],
     entry_points= {
         "console_scripts": [
-            "shannonscan=shannonscan:main",
+            "shannonscan=ShannonScanner.shannonscan:main",
         ],
     },
 )
