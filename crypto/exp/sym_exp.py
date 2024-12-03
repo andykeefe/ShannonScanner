@@ -9,7 +9,7 @@ SYMMETRIC_REGEX = {
     'DES': r'[D][E][S](?:([._-])?(?:56|64))|[d][e][s](?:([._-])?(?:56|64))',
     'TDEA': r'3DES|3[Dd]es|DES3|Des3|3-DES|3-des|des-3|DES-3|TDES|[Tt]des|TDEA|[Tt]dea',  ## to be improved
     'IDEA': r'IDEA[\._-](CBC|ECB|OFB|CTR)|[Ii]dea[\._-]([Cc]bc|[Ee]cb|[Oo]fb|[Cc]tr)',
-    'MARS': r'#include "mars.h"', ## to be completed
+    'MARS': r'#include "mars\.h"', ## to be completed
     'RC4': r'arc4|ARC4|Arc4|rc4|RC4|Rc4|ARCFOUR|arcfour|ArcFour|RCFOUR|RcFour|rcfour',
     'RC5': r'[Aa]rc5|ARC5|[Rr]c5|RC5|ARCFIVE|arcfive|ArcFive|RCFIVE|RcFive|rcfive',
     'RC6': r'[Aa]rc6|ARC6|[Rr]c6|RC6|ARCSIX|arcsix|ArcSix|RCSIX|RcSix|rcsix',
