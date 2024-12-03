@@ -19,6 +19,6 @@ SYMMETRIC_REGEX = {
     ##  source code for all sorts of reasons; RNGs, simulation software, etc. So hopefully this regex is 
     ##  specific enough to cut down on false positives. And hopefully we don't miss too many false negatives!
 
-    'Serpent': r'([Ss]erpent|SERPENT)[-_\.](CBC|[Cc]bc|CFB|[Cc]fb|ECB|[Ee]cb|OFB|[Oo]fb]|TECB|[Pp]oly1305)', ## to be completed
+    'Serpent': r'([Ss]erpent|SERPENT)[-_\.](CBC|[Cc]bc|CFB|[Cc]fb|ECB|[Ee]cb|OFB|[Oo]fb|TECB|[Pp]oly1305)', ## to be completed
     'SM4': r'[Ss]m4|SM4'
     }
