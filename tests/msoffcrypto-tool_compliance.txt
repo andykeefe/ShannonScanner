@@ -4,17 +4,17 @@ NONCOMPLIANT CRYPTOGRAPHIC MATERIAL: RC4
    - REASON: Has never been FIPS 140-2 or 140-3 approved.
    - COMPLIANCE RECOMMENDATION: Use AES for FIPS approval.
    - AFFECTED FILES:
+         - tests/test_compare_known_output.py
+         - msoffcrypto/format/ooxml.py
+         - CHANGELOG.md
+         - msoffcrypto/method/rc4_cryptoapi.py
+         - msoffcrypto/format/doc97.py
+         - README.md
          - msoffcrypto/method/rc4.py
+         - msoffcrypto/format/xls97.py
+         - msoffcrypto/format/common.py
          - tests/test_cli.sh
          - msoffcrypto/format/ppt97.py
-         - msoffcrypto/method/rc4_cryptoapi.py
-         - msoffcrypto/format/xls97.py
-         - tests/test_compare_known_output.py
-         - README.md
-         - msoffcrypto/format/common.py
-         - CHANGELOG.md
-         - msoffcrypto/format/doc97.py
-         - msoffcrypto/format/ooxml.py
 
 ***
 
@@ -24,8 +24,8 @@ NONCOMPLIANT CRYPTOGRAPHIC MATERIAL: MD5
    - REASON: Has never been FIPS 140-2 or 140-3 approved.
    - COMPLIANCE RECOMMENDATION: Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance.
    - AFFECTED FILES:
-         - msoffcrypto/method/rc4.py
          - msoffcrypto/method/xor_obfuscation.py
+         - msoffcrypto/method/rc4.py
 
 ***
 
@@ -35,9 +35,9 @@ NONCOMPLIANT CRYPTOGRAPHIC MATERIAL: py-cryptography
    - REASON: Uses OpenSSL for any cryptographic operations, can enable FIPS mode for FIPS 140-2 compliance
    - COMPLIANCE RECOMMENDATION: Ensure FIPS provider is installed and enable FIPS mode.
    - AFFECTED FILES:
+         - msoffcrypto/method/rc4_cryptoapi.py
          - msoffcrypto/method/ecma376_agile.py
          - msoffcrypto/method/rc4.py
-         - msoffcrypto/method/rc4_cryptoapi.py
          - msoffcrypto/method/ecma376_standard.py
 
 ***
@@ -51,8 +51,8 @@ NONCOMPLIANT CRYPTOGRAPHIC MATERIAL: SHA1
      - For FIPS 140-3, SHA-1 may be used for integrity checks, but not for digital signature generation.
    - COMPLIANCE RECOMMENDATION: Use SHA-2 or SHA-3 for FIPS 140-2/140-3 compliance.
    - AFFECTED FILES:
-         - msoffcrypto/method/ecma376_agile.py
          - msoffcrypto/method/rc4_cryptoapi.py
+         - msoffcrypto/method/ecma376_agile.py
          - msoffcrypto/method/ecma376_standard.py
 
 ***

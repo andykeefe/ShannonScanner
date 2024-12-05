@@ -18,17 +18,17 @@ NONRECOMMENDED CRYPTOGRAPHIC MATERIAL: RC4
     - Fluhrer, et al. (2001). "Weakness in the Key Scheduling Algorithm of RC4."
     -  --> www.cs.cornell.edu/people/egs/615/rc4_ksaproc.pdf
   - AFFECTED FILES:
+     - tests/test_cli.sh
      - msoffcrypto/format/doc97.py
      - README.md
-     - msoffcrypto/format/common.py
-     - msoffcrypto/method/rc4.py
-     - msoffcrypto/format/xls97.py
-     - msoffcrypto/format/ooxml.py
-     - tests/test_cli.sh
-     - CHANGELOG.md
      - msoffcrypto/method/rc4_cryptoapi.py
+     - msoffcrypto/format/xls97.py
      - tests/test_compare_known_output.py
+     - CHANGELOG.md
+     - msoffcrypto/method/rc4.py
+     - msoffcrypto/format/common.py
      - msoffcrypto/format/ppt97.py
+     - msoffcrypto/format/ooxml.py
 
 
 NONRECOMMENDED CRYPTOGRAPHIC MATERIAL: SHA1
@@ -42,8 +42,8 @@ NONRECOMMENDED CRYPTOGRAPHIC MATERIAL: SHA1
     - Stevens, et al., "The first collision for full SHA-1", 2017.
     - Cimpanu, "SHA-1 collision attacks are now actuallu practical and a looming danger", written for ZDNet, 2019.
   - AFFECTED FILES:
-     - msoffcrypto/method/rc4_cryptoapi.py
      - msoffcrypto/method/ecma376_agile.py
+     - msoffcrypto/method/rc4_cryptoapi.py
      - msoffcrypto/method/ecma376_standard.py
 
 
