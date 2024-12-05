@@ -1,0 +1,74 @@
+NONRECOMMENDED CRYPTOGRAPHIC MATERIAL: RC4
+  - Why RC4 should not be used: Demonstrated plaintext recovery attacks by AlFardan, et al.
+     - Secret key recovery in less time than brute force by Paul and Maitra.
+     - Possible staging for ciphertext-only attack by Mantin and Shamir.
+     - Weakness in key-scheduling algorithm may allow for key recovery by adversary.
+  - RECOMMENDATION: Use AES or ChaCha20
+  - RECOMMENDATION REASONING: AES is the common standard for symmetric encryption.
+    - ChaCha20 is a faster and more secure stream cipher, and provides authenticated encryption.
+  - REFERENCE: 
+    - RFC 7465: Prohibiting RC4 Cipher Suites
+    -  --> datatracker.ietf.org/doc/html/rfc7465
+    - AlFardan, et al. (2013). "On the Security of RC4 in TLS and WPA."
+    -  --> www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper_alfardan.pdf
+    - Paul and Maitra. (2007). "RC4 State Information at Any Stage Reveals the Secret Key."
+    -  --> eprint.iacr.org/2007/208.pdf
+    - Mantin and Shamir. (2002). "A Practical Attack on Broadcast RC4," in _Fast Software Encryption: 8th International Workshop, FSE 2001.
+    -  --> link.springer.com/book/10.1007/3-540-45473-X
+    - Fluhrer, et al. (2001). "Weakness in the Key Scheduling Algorithm of RC4."
+    -  --> www.cs.cornell.edu/people/egs/615/rc4_ksaproc.pdf
+  - AFFECTED FILES:
+     - msoffcrypto/format/doc97.py
+     - README.md
+     - msoffcrypto/format/common.py
+     - msoffcrypto/method/rc4.py
+     - msoffcrypto/format/xls97.py
+     - msoffcrypto/format/ooxml.py
+     - tests/test_cli.sh
+     - CHANGELOG.md
+     - msoffcrypto/method/rc4_cryptoapi.py
+     - tests/test_compare_known_output.py
+     - msoffcrypto/format/ppt97.py
+
+
+NONRECOMMENDED CRYPTOGRAPHIC MATERIAL: SHA1
+  - Why SHA1 should not be used: Vulnerable to collision attacks, SHA1 should no longer be used in the creation of digital signatures or other security applications.
+     - However, it may still be used in non-security applications like version control systems, i.e. git.
+  - RECOMMENDATION: Use SHA2 or SHA3
+  - RECOMMENDATION REASONING: SHA2 and SHA3 algorithms are (at present) collision resistant, and thus considered more secure.
+  - REFERENCE: 
+    - NIST, "NIST Transitioning Away from SHA-1 for All Applications", 2022.
+    - NIST, "NIST Retires SHA-1 Cryptographic Algorithm", 2022
+    - Stevens, et al., "The first collision for full SHA-1", 2017.
+    - Cimpanu, "SHA-1 collision attacks are now actuallu practical and a looming danger", written for ZDNet, 2019.
+  - AFFECTED FILES:
+     - msoffcrypto/method/rc4_cryptoapi.py
+     - msoffcrypto/method/ecma376_agile.py
+     - msoffcrypto/method/ecma376_standard.py
+
+
+NONRECOMMENDED CRYPTOGRAPHIC MATERIAL: CBC
+  - Why CBC should not be used: Not parallelizable, and padding is required which may allow for padding oracle attacks.
+  - RECOMMENDATION: Use Galois/Counter Mode (GCM)
+  - RECOMMENDATION REASONING: GCM is an authenticated encryption mode. According to McGrew and Vega, it has proven secure in the concrete security model.
+    - Unlike CBC, GCM is parallelizable, providing a performance boost to encryption operations.
+  - REFERENCE: 
+    - --> cryptopals.com/sets/3/challenges/17
+    - Eli Sohl, "Cryptopals: Exploiting CBC Padding Oracles", 2021
+    - McGrew and Veiga, "The Security and Performance of the Galois/counter Mode (GCM) of Operation", 2004.
+  - AFFECTED FILES:
+     - msoffcrypto/method/ecma376_agile.py
+
+
+NONRECOMMENDED CRYPTOGRAPHIC MATERIAL: ECB
+  - Why ECB should not be used: Highly deterministic. Patterns in plaintext may be easily visible in ciphertext.
+  - RECOMMENDATION: Use Galois/Counter Mode (GCM)
+  - RECOMMENDATION REASONING: GCM is an authenticated encryption mode. According to McGrew and Vega, it has proven secure in the concrete security model.
+    - Unlike ECB, GCM is parallelizable, providing a performance boost to encryption operations.
+  - REFERENCE: 
+    - McGrew and Veiga, "The Security and Performance of the Galois/counter Mode (GCM) of Operation", 2004.
+    - Rosulek, "The Joy of Cryptography", p. 144.
+  - AFFECTED FILES:
+     - msoffcrypto/method/ecma376_standard.py
+
+
