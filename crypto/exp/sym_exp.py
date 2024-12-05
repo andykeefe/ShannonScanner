@@ -1,12 +1,12 @@
 SYMMETRIC_REGEX = {
-    'AES': r'[A][E][S](?:([._-])?(?:128|192|256))|[a][e][s](?:([._-])?(?:128|192|256))|aes|AES',
-    'ARIA': r'[A][R][I][A](?:([._-])?(?:192|256))|[Aa][r][i][a](?:([._-])?(?:192|256))',
+    'AES': r'[A][E][S](?:([\._-])?(?:128|192|256))|[a][e][s](?:([\._-])?(?:128|192|256))|aes|AES',
+    'ARIA': r'[A][R][I][A](?:([\._-])?(?:192|256))|[Aa][r][i][a](?:([\._-])?(?:192|256))',
     'Blowfish': r'Blowfish|blowfish|BlowFish|BLOWFISH',
     'Twofish': r'Twofish|twofish|TwoFish|TWOFISH',
     'ChaCha20/XChaCha20': r'ChaCha20Poly1305|chacha20poly1305|chacha20|chacha',
     'Camellia': r'Camellia|camellia|CAMELLIA',
-    'CAST': r'[C][A][S][T](?:([._-])?(?:|5|6|128|192|256))|[Cc][a][s][t](?:([._-])?(?:5|6|128|192|256))',
-    'DES': r'[D][E][S](?:([._-])?(?:56|64))|[d][e][s](?:([._-])?(?:56|64))',
+    'CAST': r'[C][A][S][T](?:([\._-])?(?:|5|6|128|192|256))|[Cc][a][s][t](?:([\._-])?(?:5|6|128|192|256))',
+    'DES': r'[D][E][S](?:([\._-])?(?:56|64))|[d][e][s](?:([\._-])?(?:56|64))',
     'TDEA': r'3DES|3[Dd]es|DES3|Des3|3-DES|3-des|des-3|DES-3|TDES|[Tt]des|TDEA|[Tt]dea',  ## to be improved
     'IDEA': r'IDEA[\._-](CBC|ECB|OFB|CTR)|[Ii]dea[\._-]([Cc]bc|[Ee]cb|[Oo]fb|[Cc]tr)',
     'MARS': r'#include "mars\.h"', ## to be completed
